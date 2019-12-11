@@ -1,0 +1,341 @@
+﻿/*html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}*/
+
+/*body {
+    position: relative;
+    margin: 0;
+    display: flex;
+    padding-bottom: 6rem;
+    min-height: 100%;
+}*/
+
+/*.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    text-align: center;
+}*/
+pre.cscode {
+    margin: 0em;
+    overflow: auto;
+    background-color: #ffffff;
+}
+
+.cscode code {
+    font-family: Consolas,"Courier New",Courier,Monospace;
+    font-size: 10pt;
+    color: #000000;
+}
+
+.cscode .key {
+    color: #0000ff;
+}
+
+.cscode .com {
+    color: #008000;
+}
+
+.cscode .str {
+    color: #a31515;
+}
+
+
+html {
+    height: 100%;
+}
+
+body {
+    text-align: center;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    /*background:#000;*/
+    background-size: cover;
+    background-position: 50%;
+    height: 100vh;
+    width: 100%;
+    -webkit-transition: background-image .5s ease-in-out;
+    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 9pt;
+    /*color: #fff;*/
+    transition: opacity .8s ease;
+    /*overflow: hidden;*/
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased
+}
+
+.background {
+    position: fixed;
+    height: 145%;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+/* Use as a section under <div "w3-main" style="margin-left: 200px;">
+        <section class="top_level_flex">*/
+.top_level_flex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: stretch;
+    height: 100%;
+}
+
+/* Use as a section directly under <section class="top_level_flex"> for the Header*/
+.first_flex_under_top {
+    height: 100%;
+    order: 0;
+    flex: 0 2 content;
+    align-self: auto;
+}
+
+/* Use as the second section directly under <section class="top_level_flex"> for the content*/
+.second_flex_under_top {
+    height: 100%;
+    order: 1;
+    flex: 1 1 auto;
+    align-self: auto;
+    width: auto;
+}
+
+/* Use as a section directly under <section class="first_flex_under_top"> for the Header*/
+.flex_under_first {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: flex-start;
+}
+
+/* Use as a div directly under <section class="flex_under_first"> for the Header*/
+.header_flex {
+    flex: 1 0 0;
+}
+
+/* Use as a section directly under <section class="second_flex_under_top"> for the content*/
+.flex_under_second {
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-content: stretch;
+    align-items: stretch;
+    height: inherit;
+}
+
+/* Use as a div directly under <section class="flex_under_second"> for the left half content*/
+.left-half-content {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: stretch;
+    width: 100%;
+    height: auto;
+}
+
+/* Use as a div directly under <section class="flex_under_second"> for the right half content*/
+.right-half-content {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: stretch;
+    width: 100%;
+    height: auto;
+}
+
+/* Use as a div as the last item directly under <section class="top_level_flex"> for the footer*/
+.footer {
+    height: auto;
+    order: 3;
+    flex: 0 2 content;
+    align-self: auto;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("/images/bg.jpg");
+    /* Full height */
+    height: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+    /*flex-grow: 1;*/
+}
+
+/*.flex-container {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+.flex-item:nth-child(1) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+.flex-item:nth-child(2) {
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}*/
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.sample-image {
+    width: 25%;
+}
+
+.sample-image-medium {
+    width: 50%;
+}
+
+.sample-image-large {
+
+    max-width:100%; 
+    height: auto;
+    width: auto;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
